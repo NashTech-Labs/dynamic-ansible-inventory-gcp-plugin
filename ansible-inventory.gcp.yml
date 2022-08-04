@@ -1,0 +1,12 @@
+plugin: gcp_compute
+auth_kind: serviceaccount
+service_account_file: #PATH_TO_SERVICE_ACCOUNT
+hostnames:
+- private_ip
+- name
+keyed_groups:
+  # Create groups from GCE labels
+  - prefix: gcp
+    key: labels
+groups:
+  development: "'dev' in labels"
